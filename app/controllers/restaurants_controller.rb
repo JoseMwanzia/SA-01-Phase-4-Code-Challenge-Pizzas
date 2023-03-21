@@ -15,4 +15,14 @@ class RestaurantsController < ApplicationController
        # Render the restaurant's obj to a json format 
         render json: restaurant, status: :ok
     end
+
+    # DELETE /restaurant/:id
+    def destroy
+       # Retrieves a single restaurant to be deleted using its id 
+        restaurant = Restaurant.find(params[:id])
+       # Destroy the retrieved restaurant 
+        restaurant.destroy
+       # Return an empty response body
+        head :no_content
+    end
 end
