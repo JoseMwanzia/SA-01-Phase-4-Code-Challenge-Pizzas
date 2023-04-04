@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
     #  Error message
- rescue_from Active_record::RecordNotFound, with: :render_not_found_response
+ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
     # GET /restaurants
     def index 
