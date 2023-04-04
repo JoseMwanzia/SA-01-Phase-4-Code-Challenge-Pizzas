@@ -16,6 +16,6 @@ class RestaurantPizzasController < ApplicationController
     end
 
     def render_unprocessable_entity_response(invalid)
-        render json: { invalid.record.message }, status: :unprocessable_entity
+        render json: { errors: invalid.record.errors },status: :unprocessable_entity
     end
 end
