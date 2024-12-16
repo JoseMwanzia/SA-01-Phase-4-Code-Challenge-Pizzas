@@ -5,17 +5,23 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
 
 puts "Seeding data 🌱 🌱 \n"
 
     puts "Creating Pizzas!"
 10.times do
-    Pizza.create([{name: "Pepperoni", ingredients: "Dough, Tomato Sauce, Cheese, Pepperoni"}])
+    Pizza.create(name: Faker::Food.dish, ingredients: Faker::Food.ingredient)
 end
 
     puts "Creating Restaurants!"
 10.times do
-    Restaurant.create([{name: "Sottocasa NYC",address: "298 Atlantic Ave, Brooklyn, NY 11201"},{name: "PizzArte", address: "69 W 55th St, New York, NY 10019"}])
+    Restaurant.create(name: Faker::Restaurant.name ,address: Faker::Address.street_address)
+end
+
+    puts "Creating RestaurantPizza!"
+10.times do
+    RestaurantPizza.create(price: rand(1..30), pizza_id: rand(1..10), restaurant_id: rand(1..5))
 end
 
 puts "✅✅✅ Done seeding data"
