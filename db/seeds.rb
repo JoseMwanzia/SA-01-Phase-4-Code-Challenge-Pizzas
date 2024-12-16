@@ -6,4 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-restarants = Restaurant.create([{name: "Sottocasa NYC",address: "298 Atlantic Ave, Brooklyn, NY 11201"},{name: "PizzArte", address: "69 W 55th St, New York, NY 10019"}])
+puts "Seeding data 🌱 🌱 \n"
+
+    puts "Creating Pizzas!"
+10.times do
+    Pizza.create([{name: "Pepperoni", ingredients: "Dough, Tomato Sauce, Cheese, Pepperoni"}])
+end
+
+    puts "Creating Restaurants!"
+10.times do
+    Restaurant.create([{name: "Sottocasa NYC",address: "298 Atlantic Ave, Brooklyn, NY 11201"},{name: "PizzArte", address: "69 W 55th St, New York, NY 10019"}])
+end
+
+puts "✅✅✅ Done seeding data"
