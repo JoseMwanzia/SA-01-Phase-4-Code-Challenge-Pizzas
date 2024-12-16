@@ -6,7 +6,7 @@ class PizzasController < ApplicationController
        # Get all the pizzas from tha Pizza instance 
         pizzas = Pizza.all
        # Render the pizzas obj to a json obj
-        render json: pizzas, status: :ok
+        render json: pizzas.to_json(include: { restaurants: { only: [:id] } }), status: :ok
     end
 
     # POST /pizza

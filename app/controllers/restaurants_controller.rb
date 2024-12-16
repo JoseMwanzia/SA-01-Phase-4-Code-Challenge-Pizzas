@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
       # Retrieve all the restaurants
         restaurants = Restaurant.all
       # Render the restaurants objs to json format
-        render json: restaurants, status: :ok
+        render json: restaurants.to_json(include: { pizzas: { only: [:id] } }), status: :ok
     end
 
     # GET /restarants/:id
